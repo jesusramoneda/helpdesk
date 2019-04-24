@@ -46,7 +46,18 @@ class HelpdeskTicket(models.Model):
         comodel_name='helpdesk.stage',
         group_expand='_read_group_stage_ids',
         string='Stage')
-
+    project_id = fields.Many2one(
+        comodel_name='project.project',
+        string='Project',
+        related="task_id.project_id",
+        readonly="True"
+    )
+    task_id = fields.Many2one(
+        comodel_name='project.task',
+        string='Task id',
+        
+    )
+            
     def assign_to_me(self):
         self.write({'user_id': self.env.uid})
 

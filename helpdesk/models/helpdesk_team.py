@@ -27,6 +27,7 @@ class HelpdeskTeam(models.Model):
         string='# Tickets',
         compute='_compute_ticket_qty',
         store=True)
+    
 
     @api.multi
     @api.depends('ticket_ids')

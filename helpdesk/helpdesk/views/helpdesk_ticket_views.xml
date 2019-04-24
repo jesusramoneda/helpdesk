@@ -22,9 +22,9 @@
                         </div>
                         <group>
                           <field name="partner_id"/>
-                          <field name="task_id" options="{'no_create': True, 'no_create_edit':True}"/>
-                          <field name="project_id"/>
                           <group name="priority">
+                            <field name="task_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                            <field name="project_id"/>
                             <field name="priority"/>
                             <field name="date_deadline"/>
                           </group>
